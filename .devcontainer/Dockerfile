@@ -24,6 +24,7 @@ RUN apt-get update -qq \
       libffi-dev \
       libssl-dev \
       python3-dev \ 
+      nano \
       rustc \
     && rm -rf /var/cache/apt/* /var/lib/apt/lists/*;
     
