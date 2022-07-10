@@ -69,6 +69,6 @@ void BatteryInfo::Refresh() {
   lv_label_set_text_fmt(percent, "%02i%%", batteryPercent);
 
   lv_obj_align(status, charging_bar, LV_ALIGN_OUT_BOTTOM_MID, 0, 20);
-  lv_label_set_text_fmt(voltage, "%1i.%02i volts", batteryVoltage / 1000, batteryVoltage % 1000 / 10);
+  lv_label_set_text_fmt(voltage, "%1i.%02iV", batteryVoltage / 1000, batteryVoltage % 1000 / 10);
   lv_bar_set_value(charging_bar, batteryPercent, LV_ANIM_ON);
 }
