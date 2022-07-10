@@ -51,6 +51,11 @@ WatchFaceDigital::WatchFaceDigital(DisplayApp* app,
   lv_label_set_text_static(notificationIcon, NotificationIcon::GetIcon(false));
   lv_obj_align(notificationIcon, nullptr, LV_ALIGN_IN_TOP_LEFT, 0, 0);
 
+  lacticumLabel = lv_label_create(lv_scr_act(), nullptr);
+  lv_obj_set_style_local_text_color(lacticumLabel, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x532e78));
+  lv_label_set_text_static(lacticumLabel, "LACTICUM");
+  lv_obj_align(lacticumLabel, nullptr, LV_ALIGN_IN_TOP_MID, 0, 0);
+
   label_date = lv_label_create(lv_scr_act(), nullptr);
   lv_obj_align(label_date, lv_scr_act(), LV_ALIGN_CENTER, 0, 60);
   lv_obj_set_style_local_text_color(label_date, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x999999));
