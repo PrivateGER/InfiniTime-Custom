@@ -226,11 +226,18 @@ void Music::UpdateLength() {
                           (totalLength / 60) % 100,
                           (totalLength % 60) % 100);
   }
-  lv_label_set_text_fmt(txtRemainingTime,
-                        "-%02d:%02d",
-                        ((totalLength - currentPosition) / 60) % 100,
-                        ((totalLength - currentPosition) % 60) % 100);
 
+  if((totalLength - currentPosition) > 0) {
+    lv_label_set_text_fmt(txtRemainingTime,
+                          "-%02d:%02d",
+                          ((totalLength - currentPosition) / 60) % 100,
+                          ((totalLength - currentPosition) % 60) % 100);
+  } else {
+    lv_label_set_text_fmt(txtRemainingTime,
+                          "-0:00",
+                          ((totalLength - currentPosition) / 60) % 100,
+                          ((totalLength - currentPosition) % 60) % 100);
+  }
 }
 
 void Music::OnObjectEvent(lv_obj_t* obj, lv_event_t event) {
