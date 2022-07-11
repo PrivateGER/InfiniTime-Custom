@@ -40,9 +40,8 @@ namespace Pinetime {
 
         static constexpr const char* swipeDownIndicator = "\xEF\x84\x87";
         static constexpr const char* swipeUpIndicator = "\xEF\x84\x86";
-
-
-
+        static constexpr const char* notificationBell = "\xEF\x83\xB3";
+        
         // lv_font_sys_48.c
         static constexpr const char* settings = "\xEE\xA4\x82"; // e902
 
