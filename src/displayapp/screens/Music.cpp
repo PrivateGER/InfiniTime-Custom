@@ -116,8 +116,9 @@ Music::Music(Pinetime::Applications::DisplayApp* app, Pinetime::Controllers::Mus
   lv_obj_set_width(txtRemainingTime, LV_HOR_RES);
 
   swipeIndicatorLabel = lv_label_create(lv_scr_act(), nullptr);
-  lv_obj_align(swipeIndicatorLabel, nullptr, LV_ALIGN_CENTER, 17, 33);
   lv_label_set_text_static(swipeIndicatorLabel, Symbols::swipeDownIndicator);
+  lv_label_set_align(swipeIndicatorLabel, LV_LABEL_ALIGN_CENTER);
+  lv_obj_align(swipeIndicatorLabel, lv_scr_act(), LV_ALIGN_CENTER, 0, 33);
 
   constexpr uint8_t FONT_HEIGHT = 12;
   constexpr uint8_t LINE_PAD = 15;
