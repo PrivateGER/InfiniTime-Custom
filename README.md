@@ -7,3 +7,4 @@ Current features added / changed:
 - Replaced the "volts" word with V in the battery status application
 - Add remaining track duration to Music app
 - Add swiping indicator to Music app
+- Switch notification indicator out with a bell icon
