@@ -281,6 +281,9 @@ void SystemTask::Work() {
           break;
         case Messages::OnNewNotification:
           if (settingsController.GetNotificationStatus() == Pinetime::Controllers::Settings::Notification::ON) {
+            if(batteryController.IsCharging() || batteryController.PercentRemaining() == 100) {
+              break;
+            }
             if (state == SystemTaskState::Sleeping) {
               GoToRunning();
             } else {
