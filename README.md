@@ -8,3 +8,4 @@ Current features added / changed:
 - Add remaining track duration to Music app
 - Add swiping indicator to Music app
 - Switch notification indicator out with a bell icon
+- Notifications will not wake up the display or cause vibration while watch is in the charging pedestal, no matter what notification mode is selected
