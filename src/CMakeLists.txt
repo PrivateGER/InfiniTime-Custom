@@ -406,6 +406,7 @@ list(APPEND SOURCE_FILES
         displayapp/Colors.cpp
         displayapp/widgets/Counter.cpp
         displayapp/widgets/PageIndicator.cpp
+        displayapp/widgets/StatusIcons.cpp
 
         ## Settings
         displayapp/screens/settings/QuickSettings.cpp
@@ -476,7 +477,7 @@ list(APPEND SOURCE_FILES
         FreeRTOS/port_cmsis.c
 
         displayapp/LittleVgl.cpp
-        displayapp/lv_pinetime_theme.c
+        displayapp/InfiniTimeTheme.cpp
 
         systemtask/SystemTask.cpp
         systemtask/SystemMonitor.cpp
@@ -611,6 +612,7 @@ set(INCLUDE_FILES
         displayapp/Colors.h
         displayapp/widgets/Counter.h
         displayapp/widgets/PageIndicator.h
+        displayapp/widgets/StatusIcons.h
         drivers/St7789.h
         drivers/SpiNorFlash.h
         drivers/SpiMaster.h
@@ -652,16 +654,16 @@ set(INCLUDE_FILES
         drivers/Cst816s.h
         FreeRTOS/portmacro.h
         FreeRTOS/portmacro_cmsis.h
-        libs/date/includes/date/tz.h
-        libs/date/includes/date/chrono_io.h
-        libs/date/includes/date/date.h
-        libs/date/includes/date/islamic.h
-        libs/date/includes/date/iso_week.h
-        libs/date/includes/date/julian.h
-        libs/date/includes/date/ptz.h
-        libs/date/includes/date/tz_private.h
+        libs/date/include/date/tz.h
+        libs/date/include/date/chrono_io.h
+        libs/date/include/date/date.h
+        libs/date/include/date/islamic.h
+        libs/date/include/date/iso_week.h
+        libs/date/include/date/julian.h
+        libs/date/include/date/ptz.h
+        libs/date/include/date/tz_private.h
         displayapp/LittleVgl.h
-        displayapp/lv_pinetime_theme.h
+        displayapp/InfiniTimeTheme.h
         systemtask/SystemTask.h
         systemtask/SystemMonitor.h
         displayapp/screens/Symbols.h
@@ -682,7 +684,7 @@ include_directories(
         ../
         libs/
         FreeRTOS/
-        libs/date/includes
+        libs/date/include
         libs/mynewt-nimble/porting/npl/freertos/include
         libs/mynewt-nimble/nimble/include
         libs/mynewt-nimble/porting/nimble/include
@@ -808,6 +810,7 @@ elseif(TARGET_DEVICE STREQUAL "MOY-UNK") # P8b mirrored
   add_definitions(-DCLOCK_CONFIG_LF_SRC=0) # RC
   add_definitions(-DMYNEWT_VAL_BLE_LL_SCA=500)
   add_definitions(-DCLOCK_CONFIG_LF_CAL_ENABLED=1)
+  add_definitions(-DDRIVER_DISPLAY_MIRROR)
 else()
   message(FATAL_ERROR "Invalid TARGET_DEVICE")
 endif()

@@ -12,6 +12,7 @@
 #include "components/datetime/DateTimeController.h"
 #include "components/motion/MotionController.h"
 #include "drivers/Watchdog.h"
+#include "displayapp/InfiniTimeTheme.h"
 
 using namespace Pinetime::Applications::Screens;
 
@@ -144,7 +145,7 @@ std::unique_ptr<Screen> SystemInfo::CreateScreen2() {
   lv_obj_t* label = lv_label_create(lv_scr_act(), nullptr);
   lv_label_set_recolor(label, true);
   lv_label_set_text_fmt(label,
-                        "#808080 Date# %02d/%02d/%04d\n"
+                        "#808080 Date# %04d-%02d-%02d\n"
                         "#808080 Time# %02d:%02d:%02d\n"
                         "#808080 Uptime#\n %02lud %02lu:%02lu:%02lu\n"
                         "#808080 Battery# %d%%/%03imV\n"
@@ -153,9 +154,9 @@ std::unique_ptr<Screen> SystemInfo::CreateScreen2() {
                         "#808080 Accel.# %s\n"
                         "#808080 Touch.# %x.%x.%x\n"
                         "#808080 Model# %s",
-                        dateTimeController.Day(),
-                        static_cast<uint8_t>(dateTimeController.Month()),
                         dateTimeController.Year(),
+                        static_cast<uint8_t>(dateTimeController.Month()),
+                        dateTimeController.Day(),
                         dateTimeController.Hours(),
                         dateTimeController.Minutes(),
                         dateTimeController.Seconds(),
@@ -219,7 +220,7 @@ std::unique_ptr<Screen> SystemInfo::CreateScreen4() {
   lv_table_set_col_cnt(infoTask, 4);
   lv_table_set_row_cnt(infoTask, maxTaskCount + 1);
   lv_obj_set_style_local_pad_all(infoTask, LV_TABLE_PART_CELL1, LV_STATE_DEFAULT, 0);
-  lv_obj_set_style_local_border_color(infoTask, LV_TABLE_PART_CELL1, LV_STATE_DEFAULT, LV_COLOR_MAKE(0xb0, 0xb0, 0xb0));
+  lv_obj_set_style_local_border_color(infoTask, LV_TABLE_PART_CELL1, LV_STATE_DEFAULT, Colors::lightGray);
 
   lv_table_set_cell_value(infoTask, 0, 0, "#");
   lv_table_set_col_width(infoTask, 0, 30);
