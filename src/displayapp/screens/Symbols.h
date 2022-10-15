@@ -37,6 +37,7 @@ namespace Pinetime {
         static constexpr const char* chartLine = "\xEF\x88\x81";
         static constexpr const char* eye = "\xEF\x81\xAE";
         static constexpr const char* home = "\xEF\x80\x95";
+        static constexpr const char* sleep = "\xEE\xBD\x84";
 
         static constexpr const char* swipeDownIndicator = "\xEF\x84\x87";
         static constexpr const char* swipeUpIndicator = "\xEF\x84\x86";
@@ -53,6 +54,7 @@ namespace Pinetime {
         static constexpr const char* notificationsOn = "\xEE\x9F\xB7";
 
         static constexpr const char* flashlight = "\xEF\x80\x8B";
+        static constexpr const char* paintbrushLg = "\xEE\x90\x8A";
       }
     }
   }
