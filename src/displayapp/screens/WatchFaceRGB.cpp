@@ -28,7 +28,7 @@ WatchFaceRGB::WatchFaceRGB(DisplayApp* app,
     dateTimeController {dateTimeController},
     batteryController {batteryController},
     bleController {bleController},
-    notificatioManager {notificatioManager},
+    notificationManager {notificationManager},
     settingsController {settingsController},
     heartRateController {heartRateController},
     motionController {motionController} {
@@ -137,7 +137,7 @@ void WatchFaceRGB::Refresh() {
   lv_obj_realign(batteryPlug);
   lv_obj_realign(bleIcon);
 
-  notificationState = notificatioManager.AreNewNotificationsAvailable();
+  notificationState = notificationManager.AreNewNotificationsAvailable();
   if (notificationState.IsUpdated()) {
     lv_label_set_text_static(notificationIcon, NotificationIcon::GetIcon(notificationState.Get()));
   }
